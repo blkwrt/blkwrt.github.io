@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research | Edward Okeke</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #1c1c1c;
+      --mid: #555;
+      --light: #888;
+      --accent: #1a4a7a;
+      --accent-light: #e8eff7;
+      --rule: #e0e0e0;
+      --max: 780px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      background: #fff;
+    }
+    .nav-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-brand {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* PAGE */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 3.5rem 2rem 4rem;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.05s forwards;
+    }
+
+    @keyframes fadeUp { to { opacity: 1; } }
+
+    /* SECTION TITLES */
+    .section-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--ink);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 1.8rem;
+    }
+
+    .subsection-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin: 2.8rem 0 1.2rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .subsection-title:first-of-type { margin-top: 0; }
+
+    /* PUBLICATION ITEMS */
+    .pub-list { list-style: none; }
+
+    .pub-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .pub-authors {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-bottom: 0.15rem;
+      font-weight: 300;
+    }
+    .pub-journal {
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-style: italic;
+    }
+    .pub-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+      font-style: normal;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* WORKING PAPER ITEMS */
+    .wp-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .wp-item:last-child { border-bottom: none; }
+
+    .wp-status {
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 0.15rem;
+      font-style: italic;
+    }
+
+    /* WORK IN PROGRESS */
+    .wip-item {
+      font-size: 0.9rem;
+      color: var(--mid);
+      font-weight: 300;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .wip-item:last-child { border-bottom: none; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      font-size: 0.72rem;
+      color: var(--light);
+    }
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 600px) {
+      footer { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Edward Okeke</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="Okeke_CV_Feb_2026.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="section-title">Research</div>
+
+  <!-- PUBLICATIONS -->
+  <div class="subsection-title">Publications</div>
+
+  <ul class="pub-list">
+
+    <li class="pub-item">
+      <div class="pub-title">Making Bricks from Straw: Resources and Productivity in Health Care</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal">Forthcoming, <em>American Economic Review</em>, 2025</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">When a Doctor Falls from the Sky: The Impact of Easing Physician Supply Constraints on Mortality<span class="pub-badge">Lead Article</span></div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>American Economic Review</em>, 113(3): 585–627, 2023</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Playing Defense? Health Care in the Era of Covid</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>Journal of Health Economics</em>, 85(102665), 2022</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">In Nigeria, Stillbirths and Newborn Deaths Increased during the COVID-19 Pandemic</div>
+      <div class="pub-authors">Okeke, Edward, Isa Sadeeq Abubakar, and Rebecca De Guttry</div>
+      <div class="pub-journal"><em>Health Affairs</em>, 40(11): 1797–1805, 2021</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Money and My Mind: Maternal Cash Transfers and Mental Health</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>Health Economics</em>, 30(11): 2879–2904, 2021</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Working Hard or Hardly Working: Health Worker Effort and Health Outcomes</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>Economic Development and Cultural Change</em>, 70(1): 1–39, 2021</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Maternal Cash Transfers led to Increases in Facility Deliveries and Improved Quality of Delivery Care in Nigeria<span class="pub-badge">Editor's Pick</span></div>
+      <div class="pub-authors">Okeke, Edward, Zachary Wagner, and Isa Sadeeq Abubakar</div>
+      <div class="pub-journal"><em>Health Affairs</em>, 39(6): 1051–1059, 2020 · Top 10 Health Affairs Articles in 2020</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Healthcare at the Beginning of Life and Child Survival: Evidence from a Cash Transfer Experiment in Nigeria</div>
+      <div class="pub-authors">Okeke, Edward and Isa Sadeeq Abubakar</div>
+      <div class="pub-journal"><em>Journal of Development Economics</em>, 143: 102426, 2020</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Does Workfare Worsen Infant Health? Evidence from India's Public Works Program</div>
+      <div class="pub-authors">Chari, Amalavoyal, Peter Glick, Edward Okeke, and Sinduja Srinivasan</div>
+      <div class="pub-journal"><em>Journal of Development Economics</em>, 138: 116–134, 2019</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Utilization and Quality: How the Quality of Care Influences Demand for Obstetric Care in Nigeria</div>
+      <div class="pub-authors">Peet, Evan and Edward Okeke</div>
+      <div class="pub-journal"><em>PLoS ONE</em>, 14(2): e0211500, 2019</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Framework to Guide Economic Analysis of Advance Care Planning</div>
+      <div class="pub-authors">O'Hanlon, Claire, Anne Walling, Edward Okeke, Sharon Stevenson, and Neil Wenger</div>
+      <div class="pub-journal"><em>Journal of Palliative Medicine</em>, 21(10): 1480–1485, 2018</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Health Care at Birth and Infant Mortality: Evidence from Nighttime Deliveries in Nigeria</div>
+      <div class="pub-authors">Okeke, Edward and Amalavoyal Chari</div>
+      <div class="pub-journal"><em>Social Science and Medicine</em>, 196: 86–95, 2018</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Going to Scale: Design and Implementation Challenges of a Program to Increase Access to Skilled Birth Attendants in Nigeria</div>
+      <div class="pub-authors">Okeke, Edward, Emma Pitchforth, Josephine Exley, Peter Glick, Isa Sadeeq Abubakar, AV Chari, Usman Bashir, Kun Gu, and Obinna Onwujekwe</div>
+      <div class="pub-journal"><em>BMC Health Services Research</em>, 17(356): 1–12, 2017</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Development of a Model for the Validation of Work Relative Value Units for the Medicare Physician Fee Schedule</div>
+      <div class="pub-authors">Wynn, Barbara, Lane Burgette, Andrew Mulcahy, Edward Okeke, Ian Brantley, Neema Iyer, Teague Ruder, and Ateev Mehrotra</div>
+      <div class="pub-journal"><em>RAND Health Quarterly</em>, 5(1): 5, 2015</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Does a Ban on Informal Health Providers Save Lives? Evidence from Malawi</div>
+      <div class="pub-authors">Godlonton, Susan and Edward Okeke</div>
+      <div class="pub-journal"><em>Journal of Development Economics</em>, 118: 112–132, 2016</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Does Price Affect the Demand for Information about New Health Technologies? Evidence from a Field Experiment in Nigeria</div>
+      <div class="pub-authors">Okeke, Edward, Amalavoyal Chari, and Clement Adepiti</div>
+      <div class="pub-journal"><em>Economic Development and Cultural Change</em>, 64(3): 437–469, 2016</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">The Effect of Increasing the Supply of Skilled Health Providers on Pregnancy and Birth Outcomes: Evidence from the Midwives Service Scheme in Nigeria</div>
+      <div class="pub-authors">Okeke, Edward, Peter Glick, Amalavoyal Chari, Isa Sadeeq Abubakar, Emma Pitchforth, Josephine Exley, Usman Bashir, Kun Gu, and Obinna Onwujekwe</div>
+      <div class="pub-journal"><em>BMC Health Services Research</em>, 16(425): 1–9, 2016</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Persistent Barriers to Care: A Qualitative Study of Women's Experiences in Areas Served by the Midwifery Service Scheme, Nigeria</div>
+      <div class="pub-authors">Exley, Josephine, Emma Pitchforth, Edward Okeke, Peter Glick, Isa Sadeeq Abubakar, Amalavoyal Chari, Usman Bashir, Kun Gu, and Obinna Onwujekwe</div>
+      <div class="pub-journal"><em>BMC Pregnancy and Childbirth</em>, 16(1): 1–10, 2016</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Implementing a Resource-Based Relative Value Scale Fee Schedule for Physician Services: An Assessment of Policy Options for the California Workers' Compensation Program</div>
+      <div class="pub-authors">Wynn, Barbara, Harry Liu, Andrew Mulcahy, Edward Okeke, Neema Iyer, and Lawrence Painter</div>
+      <div class="pub-journal"><em>RAND Health Quarterly</em>, 4(2): 7, 2014</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">The Effects of Prior Authorization Policies on Medicaid-Enrolled Children's Use of Antipsychotic Medications: Evidence from Two Mid-Atlantic States</div>
+      <div class="pub-authors">Stein, Bradley, Emily Leckman-Westin, Edward Okeke, et al.</div>
+      <div class="pub-journal"><em>Journal of Child and Adolescent Psychopharmacology</em>, 24(7): 374–381, 2014</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Doing Wrong to do Right? Social Preferences and Dishonest Behavior</div>
+      <div class="pub-authors">Okeke, Edward and Susan Godlonton</div>
+      <div class="pub-journal"><em>Journal of Economic Behavior and Organization</em>, 106: 124–139, 2014</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Do Higher Salaries Lower Physician Migration?</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>Health Policy and Planning</em>, 29(5): 603–14, 2014</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">The Evolving Role of Emergency Departments in the United States</div>
+      <div class="pub-authors">Gonzalez Morganti, Kristy, Sebastian Bauhoff, Janice Blanchard, Mahshid Abir, Neema Iyer, Alexandria Smith, Joseph Vesely, Edward Okeke, and Arthur Kellermann</div>
+      <div class="pub-journal"><em>RAND Health Quarterly</em>, 3(2): 3, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Brain Drain: Do Economic Conditions "Push" Doctors out of Developing Countries?</div>
+      <div class="pub-authors">Okeke, Edward</div>
+      <div class="pub-journal"><em>Social Science and Medicine</em>, 98: 169–178, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">AIDS Treatment and Mental Health: Evidence from Uganda</div>
+      <div class="pub-authors">Okeke, Edward and Glenn Wagner</div>
+      <div class="pub-journal"><em>Social Science and Medicine</em>, 92: 27–34, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">The Price Sensitivity of Medicare Beneficiaries: A Regression Discontinuity Approach</div>
+      <div class="pub-authors">Buchmueller, Thomas, Kyle Grazier, Richard Hirth, and Edward Okeke</div>
+      <div class="pub-journal"><em>Health Economics</em>, 22(1): 35–51, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Workers on the Margin: Who Drops Health Coverage when Prices Rise?</div>
+      <div class="pub-authors">Okeke, Edward, Richard Hirth, and Kyle Grazier</div>
+      <div class="pub-journal"><em>Inquiry</em>, 47(1): 33–47, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">What is the Price of Prevention? New Evidence from a Field Experiment</div>
+      <div class="pub-authors">Okeke, Edward, Clement Adepiti, and Kayode Ajenifuja</div>
+      <div class="pub-journal"><em>Journal of Health Economics</em>, 32: 207–218, 2013</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Evaluating the Impact of Prevention and Early Intervention Activities on the Mental Health of California's Population</div>
+      <div class="pub-authors">Watkins, Katherine, M. Audrey Burnam, Edward Okeke, and Claude Messan Setodji</div>
+      <div class="pub-journal"><em>RAND Health Quarterly</em>, 2(4): 1, 2012</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Too Cold for a Jog? Weather, Physical Activity and Socioeconomic Status</div>
+      <div class="pub-authors">Eisenberg, Daniel and Edward Okeke</div>
+      <div class="pub-journal"><em>B.E. Journal of Economic Analysis and Policy</em>, 9(1), 2009</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Medical Care Provided to California's Injured Workers: Monitoring System Performance Using Administrative Data</div>
+      <div class="pub-authors">Wynn, Barbara, Andrew Mulcahy, Harry Liu, Rosalie Malsberger, and Edward Okeke</div>
+      <div class="pub-journal">Santa Monica, CA: RAND Corporation, 2018</div>
+    </li>
+
+    <li class="pub-item">
+      <div class="pub-title">Insurer Competitive Strategy and Enrollment in Newly Offered Preferred Provider Organizations</div>
+      <div class="pub-authors">Hirth, Richard, Kyle Grazier, Michael Chernew, and Edward Okeke</div>
+      <div class="pub-journal"><em>Inquiry</em>, 44(4): 400–11, 2008</div>
+    </li>
+
+  </ul>
+
+  <!-- WORKING PAPERS -->
+  <div class="subsection-title">Working Papers</div>
+
+  <div class="wp-item">
+    <div class="pub-title">Right-sizing Incentives</div>
+    <div class="pub-authors">Okeke, Edward and Isa Sadeeq Abubakar</div>
+    <div class="wp-status">Revise &amp; Resubmit, Journal of Development Economics · 2025</div>
+  </div>
+
+  <div class="wp-item">
+    <div class="pub-title">Defying Hades: The Effects of Early-Life Medical Intervention</div>
+    <div class="pub-authors">Okeke, Edward and Isa Sadeeq Abubakar</div>
+    <div class="wp-status">2025</div>
+  </div>
+
+  <div class="wp-item">
+    <div class="pub-title">Long Run Effects of Maternal Incentives</div>
+    <div class="pub-authors">Okeke, Edward, Adeyemi Okunogbe, and Isa Sadeeq Abubakar</div>
+    <div class="wp-status">2025</div>
+  </div>
+
+  <div class="wp-item">
+    <div class="pub-title">Incentivizing Productivity when Teamwork Matters: Evidence from a Worker Experiment in Nigeria</div>
+    <div class="pub-authors">Okeke, Edward and Italo Gutierrez</div>
+    <div class="wp-status">2023</div>
+  </div>
+
+  <!-- WORK IN PROGRESS -->
+  <div class="subsection-title">Work in Progress</div>
+
+  <div class="wip-item">SKILLS: Supporting Knowledge Improvement and Learning by mid-Level practitionerS — A Randomized Trial</div>
+  <div class="wip-item">Local Spillovers in Health Care Production</div>
+  <div class="wip-item">Maternal Beliefs and Impacts on Behavior</div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Edward Okeke · RAND Corporation</span>
+    <span>Last updated February 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

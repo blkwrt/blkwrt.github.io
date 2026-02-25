@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edward Okeke | Senior Economist, RAND</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #1c1c1c;
+      --mid: #555;
+      --light: #888;
+      --accent: #1a4a7a;
+      --accent-light: #e8eff7;
+      --rule: #e0e0e0;
+      --max: 980px;
+      --sidebar: 230px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid var(--rule);
+      background: #fff;
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-brand {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* PAGE */
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* HOME GRID */
+    .home {
+      display: grid;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap: 3.5rem;
+      padding: 3.5rem 0 4rem;
+      opacity: 0;
+      animation: fadeUp 0.5s ease 0.05s forwards;
+    }
+
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* SIDEBAR */
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: linear-gradient(150deg, #dde4ed, #c8d3e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.3rem;
+      overflow: hidden;
+    }
+    .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .sidebar-name {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+    .sidebar-title {
+      font-size: 0.77rem;
+      color: var(--mid);
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+    .sidebar-links { list-style: none; margin-bottom: 1.4rem; }
+    .sidebar-links li { margin-bottom: 0.35rem; }
+    .sidebar-links a {
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .sidebar-links a:hover { text-decoration: underline; }
+
+    .sidebar-section {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin: 1.1rem 0 0.5rem;
+    }
+    .sidebar-info {
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+    .sidebar-info a { color: var(--accent); text-decoration: none; }
+    .sidebar-info a:hover { text-decoration: underline; }
+
+    /* MAIN BIO */
+    .main-content h1 {
+      font-family: 'Crimson Pro', serif;
+      font-size: 2.1rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 0.2rem;
+      letter-spacing: -0.01em;
+    }
+    .position {
+      font-size: 0.82rem;
+      color: var(--mid);
+      margin-bottom: 1.6rem;
+    }
+    .bio p {
+      margin-bottom: 0.85rem;
+      color: #2a2a2a;
+      font-weight: 300;
+      max-width: 60ch;
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      font-size: 0.72rem;
+      color: var(--light);
+      max-width: 100%;
+    }
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 680px) {
+      .home { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-photo { width: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Edward Okeke</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="Okeke_CV_Feb_2026.pdf" target="_blank">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="home">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="profile-photo">Photo</div>
+
+      <div class="sidebar-name">Edward Okeke</div>
+      <div class="sidebar-title">
+        Senior Economist<br>
+        Professor of Policy Analysis<br>
+        RAND Corporation
+      </div>
+
+      <ul class="sidebar-links">
+        <li><a href="Okeke_CV_Feb_2026.pdf" target="_blank">↓ Curriculum Vitae</a></li>
+        <li><a href="research.html">Research &amp; Publications</a></li>
+        <li><a href="https://www.rand.org/about/people/o/okeke_edward_n.html" target="_blank">RAND Profile</a></li>
+        <li><a href="https://www.povertyactionlab.org/person/okeke" target="_blank">J-PAL Profile</a></li>
+      </ul>
+
+      <div class="sidebar-section">Contact</div>
+      <div class="sidebar-info">
+        <a href="mailto:eokeke@rand.org">eokeke@rand.org</a>
+        RAND Corporation<br>
+        1200 South Hayes Street<br>
+        Arlington, VA 22202<br>
+        +1 (703) 413-1100
+      </div>
+
+      <div class="sidebar-section">Fields</div>
+      <div class="sidebar-info">
+        Health Economics<br>
+        Development Economics<br>
+        Global Health · Health Policy
+      </div>
+    </aside>
+
+    <!-- BIO -->
+    <div class="main-content">
+      <h1>Edward Okeke</h1>
+      <div class="position">Senior Economist &amp; Professor of Policy Analysis · RAND Corporation</div>
+
+      <div class="bio">
+        <p>
+          I am a health and development economist whose research explores the economics of health care delivery, with a particular focus on low- and middle-income countries. I also trained and practiced as a physician — a background that shapes both the questions I ask and the way I interpret the evidence.
+        </p>
+        <p>
+          My work examines how provider incentives, supply constraints, and early-life interventions shape health outcomes and long-run human capital. My research has been published in the <em>American Economic Review</em>, the <em>Journal of Development Economics</em>, the <em>Journal of Health Economics</em>, <em>Health Affairs</em>, and other leading journals. I am an Affiliated Professor at J-PAL and serve on the Editorial Board of the <em>American Journal of Health Economics</em>.
+        </p>
+        <p>
+          I hold a PhD in Health Policy (Economics) from the University of Michigan and an MD from Nnamdi Azikiwe University, Nigeria. I am a recipient of the 32nd Kenneth J. Arrow Award (2024), given by the International Health Economics Association for the best published paper in health economics.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Edward Okeke · RAND Corporation</span>
+    <span>Last updated February 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
